@@ -240,3 +240,23 @@ By combining app performance, pricing, ratings and sentiment analysis, the dashb
 ⸻
 
 Developed by Nikhil Sharma | Power BI Capstone Project 4
+
+## Dashboard Preview
+
+### 1. Installs and Reach
+![Installs and Reach](Chart_1_Installs_and_Reach.png)
+
+### 2. Update Freshness
+![Update Freshness](Chart_2_Update_Freshness.png)
+
+### 3. Free vs Paid
+![Free vs Paid](Chart_3_Free_vs_Paid.png)
+
+### 4. Quality vs Reach
+![Quality vs Reach](Chart_4_Quality_vs_Reach.png)
+
+### 5. Sentiment by Category
+![Sentiment by Category](Chart_5_Sentiment_by_Category.png)
+
+### 6. Ratings vs Sentiment
+![Ratings vs Sentiment](Chart_6_Ratings_vs_Sentiment.png)
