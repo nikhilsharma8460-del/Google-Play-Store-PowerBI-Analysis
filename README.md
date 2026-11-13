@@ -1,245 +1,363 @@
-Google Play Store: App Market & User Sentiment Analysis
+# Google Play Store: App Market & User Sentiment Analysis
 
-An Interactive 13-Page Power BI Dashboard
+### Interactive 13-Page Power BI Dashboard
 
-Author: Nikhil Sharma
-Project: Capstone Project 4
-Tools: Power BI Desktop, Excel, Power Query, DAX
+**Author:** Nikhil Sharma  
+**Project:** Capstone Project 4  
+**Tools:** Power BI Desktop, Microsoft Excel, Power Query, DAX
 
-⸻
+---
 
-1. Project Overview
+## 1. Project Overview
 
-This project explores the Google Play Store ecosystem through an interactive Power BI dashboard to understand the key factors influencing app popularity, quality, pricing and user satisfaction.
+This project analyzes Google Play Store application data and user reviews to identify patterns in app popularity, ratings, pricing, installations, and customer sentiment.
 
-The analysis combines Google Play Store application data with user review sentiment to generate actionable business insights for app developers, product managers and marketing teams.
+Using Power BI, Excel, Power Query, and DAX, I developed an interactive 13-page dashboard to transform application data into meaningful business insights.
 
-Project Highlights
+The analysis is designed to support data-driven decision-making for app developers, product managers, and marketing teams.
 
-Metric	Value
-Total Unique Apps	9,638
-App Categories	33
-User Reviews	29,692
-Apps with Reviews	865
-Dashboard Pages	13
+---
 
-⸻
+## 2. Project Objectives
 
-2. Business Objectives
+The main objectives of this project are:
 
-The dashboard addresses five key business questions:
+- Analyze app installations and identify popular categories.
+- Evaluate application ratings and overall app quality.
+- Compare free and paid applications.
+- Understand the relationship between app ratings and installations.
+- Analyze app update freshness and performance.
+- Examine positive, neutral, and negative user sentiment.
+- Compare star ratings with written review sentiment.
+- Generate actionable business recommendations using Power BI.
 
-1. Which app categories dominate in terms of app count and installs?
-2. Does app quality (rating) correlate with popularity (installs)?
-3. How do free and paid apps differ in reach, rating and pricing?
-4. What is the overall user sentiment, and which categories receive the most negative feedback?
-5. Do star ratings accurately reflect what users express in written reviews?
+---
 
-⸻
+## 3. Project Highlights
 
-3. Dataset Description
+| Metric | Value |
+|---|---|
+| Total Unique Apps | 9,638 |
+| App Categories | 33 |
+| User Reviews | 29,692 |
+| Apps with Reviews | 865 |
+| Dashboard Pages | 13 |
 
-The project uses the Google Play Store Apps and User Reviews dataset.
+---
 
-Dataset workbook: Capstone_Project_4_Play_Store_and_User_Reviews_Cleaned.xlsx
+## 4. Tools & Technologies
 
-Dataset 1: Play Store Apps
+| Tool | Purpose |
+|---|---|
+| Power BI Desktop | Dashboard development and visualization |
+| Microsoft Excel | Dataset preparation |
+| Power Query | Data cleaning and transformation |
+| DAX | KPI calculations and analytical measures |
 
-* 9,659 original rows
-* 9,638 unique apps after duplicate removal
-* 13 columns
-* 33 categories
+---
 
-Key attributes include:
+## 5. Business Questions
 
-* App name
-* Category
-* Rating
-* Reviews
-* Size
-* Installs
-* Type (Free/Paid)
-* Price
-* Content Rating
-* Genres
-* Last Updated
-* Current Version
-* Android Version
+This project addresses five important business questions:
 
-Dataset 2: User Reviews
+1. Which app categories dominate in app count and installations?
+2. Does a higher app rating lead to more installations?
+3. How do free and paid applications differ in reach, ratings, and pricing?
+4. Which categories receive the most positive and negative user feedback?
+5. Do star ratings accurately reflect customer sentiment in written reviews?
 
-* 29,692 reviews
-* 865 apps
-* 5 columns
+---
 
-Key attributes include:
+## 6. Dataset Description
 
-* App
-* Translated Review
-* Sentiment (Positive, Neutral, Negative)
-* Sentiment Polarity
-* Sentiment Subjectivity
+**Dataset:** Google Play Store Apps and User Reviews
 
-⸻
+**Source workbook:**  
+`Capstone_Project_4_Play_Store_and_User_Reviews_Cleaned.xlsx`
 
-4. Data Cleaning and Preparation
+### Dataset 1: Google Play Store Apps
 
-Data preparation and modelling were performed using Excel, Power Query and DAX.
+- Original Records: 9,659
+- Unique Apps: 9,638
+- Total Columns: 13
+- App Categories: 33
 
-Key steps:
+**Important Columns:**
 
-* Removed duplicate apps using a clean AppKey column (uppercase and trimmed app names).
-* Preserved missing ratings as blank rather than replacing them with zero or average values.
-* Established a many-to-one relationship between the application and review tables using AppKey.
-* Excluded unmatched reviews from category-level analysis.
-* Considered Google Play Store install figures as lower-bound ranges.
+- App
+- Category
+- Rating
+- Reviews
+- Size
+- Installs
+- Type
+- Price
+- Content Rating
+- Genres
+- Last Updated
+- Current Version
+- Android Version
 
-⸻
+### Dataset 2: User Reviews
 
-5. Dashboard Overview
+- Total Reviews: 29,692
+- Apps with Reviews: 865
+- Total Columns: 5
 
-The Power BI dashboard contains 13 interactive pages, designed with a consistent navy-and-orange theme, navigation menu, KPI cards, slicers and cross-filtering.
+**Important Columns:**
 
-Dashboard Pages
+- App
+- Translated Review
+- Sentiment
+- Sentiment Polarity
+- Sentiment Subjectivity
 
-Page	Dashboard Section	Analysis
-1	Cover	Project introduction and dataset overview
-2	Executive Summary	Overall KPIs and Free/Paid slicer
-3	Category Landscape	App distribution across categories
-4	Installs & Reach	Category-wise app installations
-5	Update Freshness	App updates and install performance
-6	App Quality	Ratings and category performance
-7	Free vs Paid	Pricing, ratings and installs
-8	Quality vs Reach	Relationship between ratings and installs
-9	Review Sentiment	Positive, neutral and negative reviews
-10	Most-Reviewed Apps	Apps with the highest review counts
-11	Sentiment by Category	Category-wise sentiment distribution
-12	Ratings vs Sentiment	Comparison of star ratings and review sentiment
-13	Conclusions	Key findings and recommendations
+---
 
-⸻
+## 7. Data Cleaning & Preparation
 
-6. Key Business Insights
+Data cleaning and transformation were performed using Excel and Power Query.
 
-A. App Market Analysis
+### Key Steps
 
-* Family, Game and Tools account for 37% of all apps.
-* Game generates approximately 13.9 billion installs.
-* Communication generates approximately 11 billion installs.
-* Communication leads in average installs per app at approximately 35 million.
+1. Removed duplicate application records.
+2. Created a standardized AppKey using uppercase and trimmed application names.
+3. Preserved missing rating values instead of replacing them with zero.
+4. Established a many-to-one relationship between the app and review tables using AppKey.
+5. Excluded unmatched reviews from category-level analysis.
+6. Treated installation figures as lower-bound estimates rather than exact counts.
+7. Created DAX measures to calculate dashboard KPIs.
 
-B. App Quality and Pricing
+---
 
-* Average app rating: 4.17 stars.
-* 77% of rated apps have a rating of 4.0 or higher.
-* Approximately 92% of apps are free.
-* Free apps average 8.4 million installs, compared with 76,000 for paid apps.
-* Paid apps have a slightly higher average rating of 4.26 compared with 4.17 for free apps.
-* Median paid-app price: $2.99.
+## 8. Power BI Dashboard Overview
 
-C. Update Freshness
+The project includes 13 interactive dashboard pages with KPI cards, navigation, slicers, and visualizations.
 
-Apps updated in 2018 average approximately 11.2 million installs, compared with 1.6 million for apps last updated in 2017.
+| Page | Dashboard Section |
+|---|---|
+| 1 | Cover |
+| 2 | Executive Summary |
+| 3 | Category Landscape |
+| 4 | Installs & Reach |
+| 5 | Update Freshness |
+| 6 | App Quality |
+| 7 | Free vs Paid |
+| 8 | Quality vs Reach |
+| 9 | Review Sentiment |
+| 10 | Most-Reviewed Apps |
+| 11 | Sentiment by Category |
+| 12 | Ratings vs Sentiment |
+| 13 | Conclusions |
 
-This indicates a relationship between recent updates and app reach, although it does not establish causation.
+---
 
-D. User Sentiment Analysis
+## 9. Dashboard Preview
 
-Out of 29,692 user reviews:
+The following screenshots demonstrate six important analytical sections of the Power BI dashboard.
 
-* Positive: 64%
-* Neutral: 15%
-* Negative: 21%
+### 9.1 Installs and Reach
 
-Additional findings:
+![Installs and Reach](Chart_1_Installs_and_Reach.png)
 
-* Games have the highest negative review share at 35%.
-* Health & Fitness has 78% positive reviews.
-* Angry Birds Classic has 55% negative reviews among the most-reviewed apps.
-* ColorNote Notepad has 92% positive reviews.
+**Business Insight:**
 
-E. Ratings vs Sentiment
+Game and Communication categories generate approximately one-third of total installations.
 
-* Correlation between app installs and ratings: approximately 0.08.
-* Correlation between star ratings and review sentiment polarity: approximately 0.27.
+Communication also leads in average installations per app.
 
-This suggests that app ratings and written user feedback provide different but complementary perspectives on app quality.
+### 9.2 Update Freshness
 
-⸻
+![Update Freshness](Chart_2_Update_Freshness.png)
 
-7. Business Recommendations
+**Business Insight:**
 
-For App Developers
+Applications updated more recently show higher average installation figures in this dataset.
 
-* Evaluate category competition before launching new applications.
-* Consider free pricing strategies to increase reach.
-* For paid apps, understand customer willingness to pay and competitive pricing.
+This relationship does not establish that updates directly cause higher installations.
 
-For Product Managers
+### 9.3 Free vs Paid Applications
 
-* Monitor application updates regularly.
-* Track user sentiment as an early-warning indicator.
-* Investigate negative feedback to improve user experience.
+![Free vs Paid](Chart_3_Free_vs_Paid.png)
 
-For Marketing Teams
+**Business Insight:**
 
-* Do not rely only on app ratings to estimate popularity.
-* Focus on distribution, branding and marketing strategies.
+Free applications dominate the Google Play Store and generate substantially higher average installations.
 
-For Game Developers
+Paid applications have a slightly higher average star rating.
 
-* Investigate negative review themes.
-* Evaluate complaints related to advertisements, in-app purchases and game difficulty.
+### 9.4 Quality vs Reach
 
-⸻
+![Quality vs Reach](Chart_4_Quality_vs_Reach.png)
 
-8. Tools and Technologies
+**Business Insight:**
 
-Tool	Purpose
-Power BI Desktop	Dashboard development and visualization
-Excel	Dataset preparation
-Power Query	Data transformation and cleaning
-DAX	Measures and KPI calculations
+App ratings have a weak correlation with installation figures.
 
-⸻
+A high rating does not necessarily guarantee high popularity.
 
-9. Project Files
+### 9.5 Sentiment by Category
 
-* Power BI Dashboard: Nikhil_4th_Capston_Project_Presentation.pbix
-* Detailed Project Report: Nikhil_Sharma_Capstone4_PlayStore_Dashboard_Report.docx
+![Sentiment by Category](Chart_5_Sentiment_by_Category.png)
 
-Download the files from the repository above.
+**Business Insight:**
 
-⸻
+User sentiment differs across application categories.
 
-10. Project Limitations
+Game applications have a relatively high negative review share, while Health & Fitness receives a high proportion of positive reviews.
 
-* Install figures are lower-bound ranges rather than exact counts.
-* Only 865 apps (approximately 9%) have associated user reviews.
-* Approximately 15% of apps have missing ratings.
-* Sentiment scores are model-generated.
-* The dataset represents a snapshot up to August 2018 and does not provide current market trends.
+### 9.6 Ratings vs Sentiment
 
-⸻
+![Ratings vs Sentiment](Chart_6_Ratings_vs_Sentiment.png)
 
-11. Future Improvements
+**Business Insight:**
 
-* Perform text mining on user review content.
-* Develop predictive models for app installs and ratings.
-* Add category slicers and drill-through pages.
-* Refresh the dashboard using more recent datasets.
+Higher-rated applications generally receive warmer user feedback, but the relationship is moderate.
 
-⸻
+Star ratings and written reviews provide complementary perspectives on customer satisfaction.
 
-Conclusion
+---
+
+## 10. Key Business Insights
+
+### A. App Market Analysis
+
+- Family, Game, and Tools account for approximately 37% of applications.
+- Game generates approximately 13.9 billion installations.
+- Communication generates approximately 11 billion installations.
+- Communication leads in average installations per app at approximately 35 million.
+
+### B. App Quality and Pricing
+
+- Average App Rating: 4.17 stars
+- Apps Rated 4.0 or Higher: 77% of rated apps
+- Free Applications: Approximately 92%
+- Average Free App Installs: 8.4 million
+- Average Paid App Installs: 76,000
+- Average Paid App Rating: 4.26
+- Average Free App Rating: 4.17
+- Median Paid App Price: $2.99
+
+### C. Update Freshness
+
+Applications last updated in 2018 averaged approximately 11.2 million installations.
+
+Applications last updated in 2017 averaged approximately 1.6 million installations.
+
+This indicates an association between update freshness and application reach.
+
+### D. User Sentiment Analysis
+
+The analysis includes 29,692 user reviews.
+
+| Sentiment | Percentage |
+|---|---|
+| Positive | 64% |
+| Neutral | 15% |
+| Negative | 21% |
+
+**Additional Findings:**
+
+- Games: 35% negative reviews.
+- Health & Fitness: 78% positive reviews.
+- Angry Birds Classic: 55% negative reviews.
+- ColorNote Notepad: 92% positive reviews.
+
+### E. Ratings vs Sentiment
+
+**Correlation Analysis:**
+
+- App Installs vs Ratings: Approximately 0.08
+- Star Ratings vs Review Sentiment Polarity: Approximately 0.27
+
+These results suggest that app popularity, star ratings, and written customer feedback measure different aspects of application performance.
+
+---
+
+## 11. Business Recommendations
+
+### For App Developers
+
+- Evaluate category competition before launching applications.
+- Consider free pricing strategies to improve reach.
+- Analyze customer willingness to pay before setting paid-app prices.
+
+### For Product Managers
+
+- Monitor application updates regularly.
+- Track negative customer feedback.
+- Improve app functionality based on user reviews.
+
+### For Marketing Teams
+
+- Do not rely exclusively on app ratings to estimate popularity.
+- Develop effective branding and distribution strategies.
+- Use category-level insights to identify market opportunities.
+
+### For Game Developers
+
+- Investigate negative review themes.
+- Evaluate complaints about advertisements and in-app purchases.
+- Improve the user experience based on customer feedback.
+
+---
+
+## 12. Project Files
+
+The repository contains the following project files:
+
+### Power BI Dashboard
+
+`Nikhil_4th_Capston_Project_Presentation.pbix`
+
+Contains the interactive 13-page Power BI dashboard.
+
+### Project Documentation
+
+`Nikhil_Sharma_Capstone4_PlayStore_Dashboard_Report.docx`
+
+Contains the detailed project report and analysis.
+
+### Dashboard Screenshots
+
+Six PNG files representing important dashboard visualizations.
+
+**Note:** Download the PBIX file and open it using Power BI Desktop to explore the interactive dashboard.
+
+---
+
+## 13. Project Limitations
+
+- Installation figures represent lower-bound estimates rather than exact installation counts.
+- Only 865 applications have associated user reviews.
+- Approximately 15% of applications have missing ratings.
+- Sentiment scores are model-generated.
+- The dataset represents a snapshot up to August 2018 and does not reflect current market conditions.
+
+---
+
+## 14. Future Improvements
+
+- Perform text mining on user review content.
+- Develop predictive models for application installations and ratings.
+- Introduce additional category slicers and drill-through analysis.
+- Refresh the dashboard using more recent Google Play Store datasets.
+- Expand sentiment analysis using advanced natural language processing techniques.
+
+---
+
+## 15. Conclusion
 
 This project transforms Google Play Store application data and user reviews into actionable business insights.
 
-By combining app performance, pricing, ratings and sentiment analysis, the dashboard helps identify market opportunities, understand customer satisfaction and support data-driven business decisions.
+By combining app performance, pricing, ratings, installations, and customer sentiment analysis, the dashboard helps identify market opportunities, understand user satisfaction, and support data-driven business decisions.
 
-⸻
+The project demonstrates practical skills in Power BI dashboard development, data cleaning, data modeling, DAX, visualization, and business analytics.
 
-Developed by Nikhil Sharma | Power BI Capstone Project 4
+---
+
+**Developed by Nikhil Sharma**  
+*Power BI Capstone Project 4*
 
 ## Dashboard Preview
 
